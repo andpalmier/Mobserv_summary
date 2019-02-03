@@ -34,6 +34,8 @@ Features: Application framework (reuse of components), integrated browser, 2D an
 - Content Providers: Manages access to data on the device and share data between applications (ex. list of contacts). Use of unique URI to identify data in a provider.
 - Broadcast receivers: a component that responds to system-wide broadcast (even handler) initiated by other application or by the system (ex. battery is fully charged).
 
+![Service life cycle](img/services.png){width=250px}
+
 **Other important stuff**
 
 - Views: object that knows how to draw itself on the screen.
@@ -244,5 +246,78 @@ users, prompting them to authorize payment
 
 **Ads**:
 - Android Admob, iOS iAds: analyze, promote, monetize
+
+# Homework questions
+
+### What are the advantages of Firebase?
+
+We can think of Firebase, as the set of tools offered by Google to build scal- able applications directly in the cloud. The main product is their real-time database.
+The main benefit of having a real-time database is that data are synchronized across multiple clients. In order to do that, Firebase allows you to subscribe to a channel to get all the changes applied to a specific property. With that in mind, designing a Firebase client it is different from any traditional approaches.
+It is possible to say that the main benefit of Firebase is the ability to react - and also quickly - to changes on the elements of the database. This represents an advantage for both the user and the developer, since they can deal with a reliable and fast solution.
+Other advantages of Firebase are the Cloud functions and Analytics offered; so that it is possible to avoid storing data in the user’s device and to have an always ready overview on how the project is working. In addition, Firebase offers some handy features to work with Cloud messaging, authentication and even crash reporting.
+All the features helps to create a versatile solution for many developers, not only in the Android scenario.
+
+### Explain how to redesign the app to work with fragment.
+
+n order to make the app work with fragments, we should change the MainActivity to extend FragmentActivity or AppCompatActivity, both will support fragment management. In our case, MainActivity already extends AppCompatActivity and therefore, no changes need to be done. Then, we should put all our code into classes that extend Fragment and load them into our MainActivity. There are two different methods to load them:
+- Dynamically: using a FragmentManager in the Java code.
+- Statically: simply embedding the fragment in the activity’s XML layout
+file.
+
+### What is a camera in Google maps?
+
+s stated in the documentation for the Map SDK in Android, the map view is modeled as a camera looking on a flat surface. The position of the camera and, thus, the rendering of the map, are specified by the following properties:
+- target point, defined from latitude and longitude location
+- bearing (orientation), the direction in which a vertical line on the map
+points measured in degrees clockwise from north
+- tilt, the camera’s position on an arc between directly over the map’s center
+position and the surface of the Earth, measured in degrees from the nadir
+- zoom, which determines the scale of the map.
+Changing the position of the camera, we can change the part of the world which is visible on the map.
+
+### What is a broadcast receiver? And an Intent Filter?
+
+Broadcast Receiver is one of the main Android components. It allows to register for system and application events, so that an app can react on them. If a receiver is registered for an event, it is notified directly by the Android runtime once this event happens.
+The most typical example is when an app register for the “ACTION \_BOOT\_COMPLETED” system event, which is triggered when the Android system has completed the boot process. In this way, this app can detect when the boot process is completed and react.
+Receivers are registered using the Android Manifest or using the Con- text.registerReceiver() method.
+Similarly, Intents are used to alert the Android system that a certain event has occurred. Intents are often used to describe the action which should be performed and provide data upon which such an action should be done. For instance, an application can start a browser component for a certain URL via an intent (like the first app that we developed for the android lab).
+
+ntent Filter are used from components to register for a specific action and specific data. Using Intent Filters, it is possible to specify the types of intents to which an activity, a service, or a broadcast receiver can respond to by declaring the capabilities of a component.
+Android components can register intent filters either in the Android Manifest or, in case of a Broadcast Receiver, dynamically, via the function specified above. An intent filter is defined by its category, action and data filters; and it can contain additional meta-data.
+
+### Compare Objective-C with Swift and highlight your preferences:
+
+All the members of the team prefers Swift for different reasons:
+• It is more expressive and allows the programmer to perform the task in less lines of code that would be required to performed the same task in Objective-C.
+• It is easier to read and maintain; for instance it does not requires the semicolons at the end of lines or parenthesis to surround conditional expressions inside if/else statements.
+• It is the Apple language. If a developer wants to build an application for iOS, it makes sense to use the programming language developed from the company.
+• It is newer than Objective-C, thus there are no well developed tools to reverse engineer an application.
+The main issue with Swift is that it is continuously changing the syntax of some of the components. Even if the Xcode IDE help us in these cases, it increase the difficulty of maintaining an app over the years as well as debug issues from old versions of Swift.
+The main advantages of Objective-C are its incorporation of the C programming language, which means programmers can get the benefits of C and C++, and it offers plenty of third-party libraries and frameworks.
+
+### What are iOS app states?
+
+As specified in the Documentation provided by Apple 1, the life cycle of an iOS app can be divided in 4 states:
+- Not running: The app has not been launched or was running, but was terminated by the system.
+- Inactive: The app is not receiving events, even though it is running in the foreground.
+- Active: The app is in the foreground and it is receiving events.
+- Background: The app is in the background and executing code.
+- Suspended: The app is in the background but is not executing code.
+
+![App states iOS](img/appstates.png){width=250px}
+
+### When and for what purpose are the following methods called during the lifecycle of an Activity?
+
+- The onCreate() function is called when a new Activity is created. All the setup is done in this function.
+- The onStart() function defines when the Activity is actually visible to the user.
+- The onResume() function is called when an activity is working on the foreground.
+- The onDestroy() function is called when the Activity is completely de- stroyed and it is used to release all remaining resources of the Activity.
+- The onStop() function is called when the Activity is still running but not visible to the user.
+- The onPause() function is called when the Activity is no longer in the
+foreground, i.e. not interacting with the user.
+
+### Use an example to illustrate the relationship between different application components.
+
+Android have 4 main components: Activity, Service, Broadcast Receiver and Content Provider. Considering the pro version of the Youtube applica- tion as example, it is possible to notice that it contains numerous Activities; such as the home section, where the suggested video are displayed to the user. The pro version of the Youtube app allows users to listen to the music in background, this is possible using a Service. Youtube could use a Broadcast Receiver to pause the downloading of the video in case the available bandwidth does not allow the user to watch it in the minimum quality available, this is particularly useful, since this type of receiver is continuously running. Finally, the Content Provider can be used to access the local files, since it is also possible to download videos from the Youtube platform. At this point, if a user wants to play the video downloaded locally, an intent is called from the local file manager app to request the Youtube app to play the video.
 
 
