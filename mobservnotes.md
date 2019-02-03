@@ -67,6 +67,165 @@ Handheld devices allow for context aware computing: Application can respond / be
 - Choose sensor delays carefully.
 
 
+**Android market**
+
+- While mobile Internet requests are growing rapidly worldwide, there are regional differences in the devices used
+- Smartphones with touchscreens, WiFi connectivity, and advanced Operating Systems are growing in popularity
+- Mobile Internet Devices like tablets and gaming devices are changing the way the mobile Internet is accessed 
+- Apple seems to be the top device manufacturer driven by the worldwide adoption of iOSdevices
+- The launch of new Android devices over the past years has led to rapid growth in the Android platform
+
+![Google android device category](img/google_category.png){ width=300px }
+
+**Is Android open?**
+
+- Android is fully open for the SW developer ecosystem but completely closed for the handset OEM ecosystem
+- Android governance model is an elaborate set of control points, allowing Google to bundle its own services and control the HW & SW on every handset:
+  - Private branches available to select partners
+  - Closed review process. Google is the only authority to accept or reject a code submission from the community
+  - Speed of evolution. Google dictates high speed innovations.
+  - Gated developer community. Android market is exclusive distribution channel for the apps, only available on exclusive license agreement
+  - Anti-fragmentations agreement signed by OHA members committing not to release non CTS compliant handsets
+  - Private roadmap only available to main partners
+  - Android Trademark. Android branding is fully controlled by Google
+
+![Android pyramid](img/android_pyramid.png){ width=300px }
+
+**Mobile design**
+
+Remember: User Device (UD), User interface (UI), User Apps (UA), User Experience (UX).
+Design is not just what it looks like and feel like. Design is how it works: Users’ expectations and common conventions  are directly translated to Value and Trust.
+
+**User interface**
+
+Gives you access to computing capabilities by abstracting the machine. Allows user interact with a machine: Input $\rightarrow$ system $\rightarrow$ output
+
+**Natural user interface (NUI)**
+
+Invisible UI helping human to continuously learn complex interaction. Intuitive UI usable without learning. Applicable to wearable devices as well as smartphones/tablets.
+
+![A-NUI, NUI, GUI, CLI](img/gui_cli.png){ width=300px }
+
+![Natural User Interface](img/nui.png){ width=300px }
+
+**Content first then navigation**
+
+Lots of time spent for navigation to get the content 
+
+- Speed matters : how long does it take to see the content
+- Space matters : save screen by minimizing the tabs/menu & navigation bar
+
+The content itself could serve as the interface
+- Interact with guessable, physical, and realistic gestures
+- Make use of skills learned through a lifetime of living
+
+Example of Flickr regarding *screen size*:  
+Flickr’s mobile web experience takes 60 plus navigation options down to six. They focused on the key actions performed by users. You need to know your audience and prioritize what really matters for them.
+
+**Performance**
+
+Connection is not always fast, so you need to reduce request and file size (speed is not important just on mobile). Take advantage of new technologies. Design choices impact application performance.
+
+**Context**
+
+Time and place play an important role in how mobile phone are used, for example in the evening, people do not want to use their smartphones for work. It is unlikely to get someone's full attention: partial attention or a short burst.
+
+**Capabilities**
+
+Example: location detection, orientation, audio, proximity, ecc...
+Reinvent ways to meet people's needs!!! For example, augumented reality to navigate space around you.
+
+**Smart app**
+
+Awareness of user environment by adding relevant information on the present as a function of user preferences/profile:
+
+- User becomes part of the experience 
+- User experiences a better decision-making 
+
+My environment (physical location/social context) may influence my actions. Context is what make mobile device a powerful medium.
+
+You cannot use the same ideas directly from the desktop UI world. You need to have a mobile mindset. Achieve great performance through appropriate design:
+
+- new interaction paradigm
+- quick use, quick storage
+- present useful information quickly
+- keep it simple, clear and precise
+- address a specific  need
+- one at a time please
+- no background applications
+
+Interaction type:
+
+- Lookup/Find : urgent local info
+- Explore/Play : local actions to pass time
+- Check In/Status :  repeatable important micro-tasking
+- Edit/Create : one-shot urgent micro-tasking
+
+**Content over navigation**
+
+As a general rule, content takes precedence over navigation on mobile:
+
+- immediate access to content and not the site map
+- adjust the structure accordingly to the app usage /audience
+
+**Input**
+
+- Text input has to be minimized
+- Designing interfaces that require less attention in dynamic environments
+- Hardware buttons have some significant advantages on software (touch screen) buttons when it comes to eyes-free interaction
+- Place interactive elements at bottom of screen
+- Users should get enough feedback from the device
+- Good defaults
+- Auto-capitalize, auto-completion, and predictive text entry
+- Alternate input methods (QR code, speech, images)
+- gesture-based or shake-based text entry methods
+
+**Visual design**
+
+Good design matters:
+
+1. Users look at multiple screenshots
+2. Users read the reviews, check stars and download rate
+3. Users judge the app based on the quality of its icon 
+4. User evaluate the app for 20-50 seconds
+
+Visual design elements: messaging and branding, look and feel, layout, color, typography, graphics, logo.
+
+**Visual design guidelines**
+
+- Use visual design to deliver your message and use branding to reinforce the message
+- Use context and user preferences to adapt look and feel and evoke user actions
+- Start building layout early (Different layout for different devices )
+- Know your screen before dealing with the colors and font type 
+- Know the physiology and culture of colors 
+- Appropriate font type and size improve the readability 
+- Use graphics to establish a visual experience 
+
+**Information architecture**
+
+How the information/content is structured and shaped and how users interact with it through different devices. How intuitive is to find information and perform tasks.
+
+![User, content, context](img/ucc.png){ width=300px }
+
+**Information Architecture: Usability**
+
+- Ease of learning: faster the second time and so on.
+- Recall: remember how from one session to the next
+- Productivity: perform tasks quickly and efficiently
+- Minimal error rates: if they occur, good feedback so user can recover
+- High user satisfaction: confident of success
+
+**Information Architecture: Findability**
+Ease with which information can be found: UI design, accessibility, search engine. Evaluated through: tree testing and usability testing.
+
+![User, content, context](img/visual_design.jpg)
+
+**Importance of logo and a good app name**
+
+- Law of subtraction: FedEx
+- Law of Representation: Tour de France
+- Law of association/reminder: Amazon
+- Law of avant-garde: Apple logo
 
 # 4. Golden rules
 
@@ -79,7 +238,6 @@ Handheld devices allow for context aware computing: Application can respond / be
 7. Start coding from the interface, than backend -> Top-down approach.
 8. Beta test the app and study the usability -> test before submit
 9. Release and fix the bug.
-
 
 
 # iOS
@@ -259,14 +417,14 @@ All the features helps to create a versatile solution for many developers, not o
 
 ### Explain how to redesign the app to work with fragment.
 
-n order to make the app work with fragments, we should change the MainActivity to extend FragmentActivity or AppCompatActivity, both will support fragment management. In our case, MainActivity already extends AppCompatActivity and therefore, no changes need to be done. Then, we should put all our code into classes that extend Fragment and load them into our MainActivity. There are two different methods to load them:
+In order to make the app work with fragments, we should change the MainActivity to extend FragmentActivity or AppCompatActivity, both will support fragment management. In our case, MainActivity already extends AppCompatActivity and therefore, no changes need to be done. Then, we should put all our code into classes that extend Fragment and load them into our MainActivity. There are two different methods to load them:
 - Dynamically: using a FragmentManager in the Java code.
 - Statically: simply embedding the fragment in the activity’s XML layout
 file.
 
 ### What is a camera in Google maps?
 
-s stated in the documentation for the Map SDK in Android, the map view is modeled as a camera looking on a flat surface. The position of the camera and, thus, the rendering of the map, are specified by the following properties:
+As stated in the documentation for the Map SDK in Android, the map view is modeled as a camera looking on a flat surface. The position of the camera and, thus, the rendering of the map, are specified by the following properties:
 - target point, defined from latitude and longitude location
 - bearing (orientation), the direction in which a vertical line on the map
 points measured in degrees clockwise from north
@@ -282,7 +440,7 @@ The most typical example is when an app register for the “ACTION \_BOOT\_COMPL
 Receivers are registered using the Android Manifest or using the Con- text.registerReceiver() method.
 Similarly, Intents are used to alert the Android system that a certain event has occurred. Intents are often used to describe the action which should be performed and provide data upon which such an action should be done. For instance, an application can start a browser component for a certain URL via an intent (like the first app that we developed for the android lab).
 
-ntent Filter are used from components to register for a specific action and specific data. Using Intent Filters, it is possible to specify the types of intents to which an activity, a service, or a broadcast receiver can respond to by declaring the capabilities of a component.
+Intent Filter are used from components to register for a specific action and specific data. Using Intent Filters, it is possible to specify the types of intents to which an activity, a service, or a broadcast receiver can respond to by declaring the capabilities of a component.
 Android components can register intent filters either in the Android Manifest or, in case of a Broadcast Receiver, dynamically, via the function specified above. An intent filter is defined by its category, action and data filters; and it can contain additional meta-data.
 
 ### Compare Objective-C with Swift and highlight your preferences:
@@ -320,4 +478,23 @@ foreground, i.e. not interacting with the user.
 
 Android have 4 main components: Activity, Service, Broadcast Receiver and Content Provider. Considering the pro version of the Youtube applica- tion as example, it is possible to notice that it contains numerous Activities; such as the home section, where the suggested video are displayed to the user. The pro version of the Youtube app allows users to listen to the music in background, this is possible using a Service. Youtube could use a Broadcast Receiver to pause the downloading of the video in case the available bandwidth does not allow the user to watch it in the minimum quality available, this is particularly useful, since this type of receiver is continuously running. Finally, the Content Provider can be used to access the local files, since it is also possible to download videos from the Youtube platform. At this point, if a user wants to play the video downloaded locally, an intent is called from the local file manager app to request the Youtube app to play the video.
 
+# 5. Android and Machine Learning
 
+Common use cases: recognizing text, detecting faces, identifying landmarks, scanning barcodes, labeling images. On-device vs.in the cloud
+
+- On-device APIs: can process data quickly, not general-use CPU alone; No N/W latency, no need for network connection, no privacy / data sensitivity consideration, Cheap computational cost on device
+- Cloud-based APIs: leverage greater processing power, Google Cloud Platform's machine learning technology accuracy
+
+You can use one of the following:
+
+1. Android Neural Networks API (NNAPI)
+2. ML Kit for Firebase: mobile SDK by google
+
+What is TensorFlow?  
+Open-source software library for dataflow programming. Also used for ML such as neural networks. Easy to train with CPU and GPU distributed computing. Parallel NN training:  train multiple NNs and multiple GPUs. Large community + Open Source
+
+Use cases: Voice/Sound Recognition, Text Based Applications, Image Recognition...
+
+![Neural Network API](img/nnapi.png)
+
+![Firebase ML Kit](img/fbmlkit.png)
