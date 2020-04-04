@@ -1,5 +1,6 @@
-%MobServ Notes
-%EURECOM
+# MobServ Notes
+
+Summary of the theory behind the [MobServ](http://www.eurecom.fr/en/course/MobServ-2015Fall) course at EURECOM in the year 2019/2020.
 
 # 1. Mobile app landscape
 
